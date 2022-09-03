@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  server_app:
+    restart: always
+    build: server_app/.
+    ports:
+      - '8080:80'
+    container_name: server_app
+  db:
+    build: db/.
+    restart: always
+    ports:
+      - '8001:80'
+    container_name: db
