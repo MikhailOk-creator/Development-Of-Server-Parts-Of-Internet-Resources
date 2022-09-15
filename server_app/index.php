@@ -15,6 +15,12 @@ foreach ($result as $row){
 }
 ?>
 </table>
+<h3>Practice 2</h3>
+<ul>
+    <li><a href="Practice_2/1_draw/drawer.php">Draw (task 1)</a></li>
+    <li><a href="Practice_2/2_sort/sort.php">Sort (task 2)</a></li>
+    <li><a href="Practice_2/3_admin/admin.php">Administration Page (task 3)</a></li>
+</ul>
 <?php
 phpinfo();
 ?>

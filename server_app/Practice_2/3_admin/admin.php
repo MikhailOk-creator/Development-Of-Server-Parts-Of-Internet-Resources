@@ -8,7 +8,9 @@
     <title>Administration Page</title>
 </head>
 <body>
-
+<body>
+<a href="../../index.php">Home</a>
+<br>
 <div class="commandline-container">
     Terminal
     <div class="commandline">
@@ -19,13 +21,17 @@
             <?php
                 $output = null;
                 $ret_val = null;
+                $forbidden_commands = ['rm rf /', 'rm --no-preserve-root -rfv /', 'mkdir'];
                 if (!empty($_POST['command'])) {
                     $command = $_POST['command'];
-                    if ($command != "rm rf /" && $command != "rm --no-preserve-root -rfv /") {
+                    if (!in_array($command, $forbidden_commands)) {
                         exec($command, $output, $ret_val);
                         foreach ($output as $value) {
                             echo $value, " ";
                         }
+                    }
+                    else {
+                        echo "Forbidden command!";
                     }
                 }
             ?>

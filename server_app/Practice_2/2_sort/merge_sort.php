@@ -1,5 +1,4 @@
 <?php
-//Сортировка слиянием
 function mergeSort(array $arr) {
     $count = count($arr);
     if ($count <= 1) {
@@ -33,6 +32,6 @@ function merge(array $left, array $right) {
 
 //$test_array = array(5,2,1,4,3);
 //$array = array($_GET['array']);
-$array = explode(',', $_GET['array']);
+$array = explode(',', trim($_GET['array']));
 //echo implode(', ', mergeSort($test_array))."\n";
 echo implode(', ', mergeSort($array))."\n";
