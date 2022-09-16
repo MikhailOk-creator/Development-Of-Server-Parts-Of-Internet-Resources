@@ -1,5 +1,6 @@
 <?php
-function mergeSort(array $arr) {
+function mergeSort(array $arr): array
+{
     $count = count($arr);
     if ($count <= 1) {
         return $arr;
@@ -14,7 +15,8 @@ function mergeSort(array $arr) {
     return merge($left, $right);
 }
 
-function merge(array $left, array $right) {
+function merge(array $left, array $right): array
+{
     $ret = array();
     while (count($left) > 0 && count($right) > 0) {
         if ($left[0] < $right[0]) {
@@ -30,8 +32,10 @@ function merge(array $left, array $right) {
     return $ret;
 }
 
-//$test_array = array(5,2,1,4,3);
-//$array = array($_GET['array']);
-$array = explode(',', trim($_GET['array']));
-//echo implode(', ', mergeSort($test_array))."\n";
-echo implode(', ', mergeSort($array))."\n";
+if (!empty($_GET['array'])) {
+    //$test_array = array(5,2,1,4,3);
+    //$array = array($_GET['array']);
+    $array = explode(',', trim($_GET['array']));
+    //echo implode(', ', mergeSort($test_array))."\n";
+    echo implode(', ', mergeSort($array)) . "\n";
+}

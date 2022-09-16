@@ -1,22 +1,24 @@
 <?php
-$number = $_GET['num'];
-if ($number != null && $number > 0) {
-    $x = $number << 8;
-    $y = $number << 5;
-    $d = $number << 1;
-    $color = "blue";
-    if ($number % 4 == 1) {
-        $color = "green";
-    } elseif ($number % 4 == 2) {
-        $color = "red";
-    } elseif ($number % 4 == 3) {
-        $color = "yellow";
-    }
-    if ($number % 2 == 1) {
-        echo "<svg viewBox='0 0 200 200' style='background-color: {$color}; width: {$x}; height: {$y}' />";
+if (!empty($_GET['num'])) {
+    $number = $_GET['num'];
+    if ($number > 0) {
+        $x = $number << 8;
+        $y = $number << 5;
+        $d = $number << 1;
+        $color = "blue";
+        if ($number % 4 == 1) {
+            $color = "green";
+        } elseif ($number % 4 == 2) {
+            $color = "red";
+        } elseif ($number % 4 == 3) {
+            $color = "yellow";
+        }
+        if ($number % 2 == 1) {
+            echo "<svg viewBox='0 0 200 200' style='background-color: {$color}; width: {$x}; height: {$y}' />";
+        } else {
+            echo "<svg viewBox='0 0 200 200'><circle cx='{$d}' cy='{$d}' r='{$d}' style='fill: {$color}';/></svg>";
+        }
     } else {
-        echo "<svg viewBox='0 0 200 200'><circle cx='{$d}' cy='{$d}' r='{$d}' style='fill: {$color}';/></svg>";
+        echo "<h1>Please, enter another number</h1>";
     }
-} elseif ($number < 0) {
-    echo "<h1>Please, enter another number</h1>";
 }
