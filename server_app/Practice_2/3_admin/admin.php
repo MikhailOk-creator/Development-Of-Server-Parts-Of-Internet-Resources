@@ -21,7 +21,7 @@
             <?php
                 $output = null;
                 $ret_val = null;
-                $forbidden_commands = ['rm rf /', 'rm --no-preserve-root -rfv /', 'mkdir'];
+                $forbidden_commands = ['rm rf /', 'rm --no-preserve-root -rfv /'];
                 if (!empty($_POST['command'])) {
                     $command = $_POST['command'];
                     if (!in_array($command, $forbidden_commands)) {
