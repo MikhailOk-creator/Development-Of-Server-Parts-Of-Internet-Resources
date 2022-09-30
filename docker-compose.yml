@@ -1,15 +1,42 @@
 version: '3.8'
 
 services:
-  server_app:
+  practices_first_and_second:
     restart: always
-    build: server_app/.
+    build: Practices_1&2/.
     ports:
-      - '8080:80'
-    container_name: server_app
+      - '8083:80'
+    container_name: practices_first_and_second
+
   db:
     build: db/.
     restart: always
     ports:
-      - '8001:80'
+      - '3307:3306'
     container_name: db
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    restart: always
+    links:
+      - db
+    volumes:
+      - ./nginx/src:/usr/share/nginx/html-static
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8080:8082"
+
+  apache:
+    container_name: php-apache
+    build:
+      context: ./apache
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+    links:
+      - db
+    volumes:
+      - ./apache/src:/var/www/html

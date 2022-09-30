@@ -5,11 +5,15 @@ FLUSH PRIVILEGES;
 
 USE appDB;
 CREATE TABLE IF NOT EXISTS users (
-  ID INT(11) NOT NULL AUTO_INCREMENT,
-  name VARCHAR(20) NOT NULL,
-  surname VARCHAR(40) NOT NULL,
-  PRIMARY KEY (ID)
+    ID INT(11) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL,
+    surname VARCHAR(40) NOT NULL,
+    password VARCHAR(100),
+    role VARCHAR(100),
+    PRIMARY KEY (ID)
 );
+
+INSERT INTO users (name, surname, password, role) VALUES ('Mikhail', 'Okhapkin', '123456', 'admin');
 
 INSERT INTO users (name, surname)
 SELECT * FROM (SELECT 'Alex', 'Rover') AS tmp

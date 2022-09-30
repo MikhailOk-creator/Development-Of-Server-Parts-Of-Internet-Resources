@@ -1,0 +1,27 @@
+.commandline-container {
+    width: 500px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.commandline {
+    width: inherit;
+    height: inherit;
+    background-color:#1E1E1E;
+}
+
+.input {
+    color: #9DDCFE;
+    background-color: transparent;
+    width: 100%;
+    border:0;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.output {
+    color: #9DDCFE;
+    width: 100%;
+}
