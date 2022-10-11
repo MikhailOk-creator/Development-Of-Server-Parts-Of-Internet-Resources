@@ -1,6 +1,6 @@
 FROM mysql
 
-ENV MYSQL_DATABASE appDB
+ENV MYSQL_DATABASE MainDB
 ENV MYSQL_ROOT_PASSWORD root
 ENV MYSQL_ROOT_USER root
 ENV MYSQ_USER user
@@ -8,4 +8,4 @@ ENV MYSQL_PASSWORD password
 
 ADD init.sql /docker-entrypoint-initdb.d
 
-EXPOSE 3306
+EXPOSE 3307

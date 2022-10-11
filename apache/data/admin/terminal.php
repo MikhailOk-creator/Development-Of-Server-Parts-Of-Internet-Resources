@@ -4,10 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/terminal_style.css" type="text/css">
     <title>Administration Page</title>
+    <style>
+        .commandline-container {
+            width: 500px;
+            height: 200px;
+            margin: 20px auto;
+        }
+
+        .commandline {
+            width: inherit;
+            height: inherit;
+            background-color:#1E1E1E;
+        }
+
+        .input {
+            color: #9DDCFE;
+            background-color: transparent;
+            width: 100%;
+            border:0;
+        }
+
+        textarea:focus, input:focus{
+            outline: none;
+        }
+
+        .output {
+            color: #9DDCFE;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+<p><a href="users.php">Назад</a></p>
 <div class="commandline-container">
     Terminal
     <div class="commandline">
