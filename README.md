@@ -4,7 +4,8 @@
 Below are the commit hashes of completed practices.
 For each practice, the commit hash is the hash of the last commit of the practice. 
 If you want to see the code of the practice, you can use the command:   
-`git checkout <commit hash>`
+`git checkout <commit hash>`  
+Or you just can switch to the branch of the practice 🙂
 
 List of practices:
 - Practice 1: 290800f24a1ac6c3d9b1e7bf958c9ea9017a69ad
