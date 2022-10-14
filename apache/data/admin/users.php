@@ -17,11 +17,11 @@
                 </tr>
 
                 <?php
-                    $mysqli = new mysqli("database", "guest", "guestguest", "test");
+                    $mysqli = new mysqli("database", "user", "password", "main_database");
                     $table = $mysqli->query("SELECT * FROM users");
 
                     foreach ($table as $row) {
-                        echo "<tr><td>{$row['login']}</td><td>{$row['group']}</td></tr>";
+                        echo "<tr><td>{$row['login']}</td><td>{$row['roles']}</td></tr>";
                     }
                 ?>
 

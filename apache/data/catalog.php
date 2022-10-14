@@ -16,11 +16,11 @@
                 </tr>
 
                 <?php
-                    $mysqli = new mysqli("database", "guest", "guestguest", "test");
-                    $table = $mysqli->query("SELECT * FROM items");
+                    $mysqli = new mysqli("database", "user", "password", "main_database");
+                    $table = $mysqli->query("SELECT * FROM products");
 
                     foreach ($table as $row) {
-                        echo "<tr><td>{$row['name']}</td><td>{$row['price']}</td></tr>";
+                        echo "<tr><td>{$row['name_of_product']}</td><td>{$row['price']}</td></tr>";
                     }
                 ?>
 
