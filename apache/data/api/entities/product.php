@@ -43,7 +43,7 @@ class product
             "SELECT * FROM $this->table_name WHERE $this->table_name.id = $this->id";
         $result = $this->conn->query($query);
         foreach ($result as $row) {
-            $this->name_of_product = $row["name"];
+            $this->name_of_product = $row["name_of_product"];
             $this->description = $row["description"];
             $this->price = $row["price"];
         }
@@ -53,7 +53,7 @@ class product
     {
         $this->clear_fields();
         $query = /** @lang MySQL */
-            "UPDATE $this->table_name SET name=\"$this->name_of_product\", description=\"$this->description\", price=\"$this->price\" WHERE id=$this->id";
+            "UPDATE $this->table_name SET name_of_product=\"$this->name_of_product\", description=\"$this->description\", price=\"$this->price\" WHERE id=$this->id";
         if ($this->conn->query($query)) {
             return true;
         }

@@ -6,27 +6,25 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 include_once "api/config/database.php";
-include_once "api/entities/user.php";
+include_once "api/entities/product.php";
 
 $database = new Database();
 $db = $database->getConnection();
 
-$user = new User($db);
+$product = new Product($db);
 
 $data = json_decode(file_get_contents("php://input"));
+$product->id = $data->id;
+$product->name_of_product = $data->name_of_product;
+$product->description = $data->description;
+$product->price = $data->price;
 
-$user->id = $data->id;
-
-$user->name = $data->name;
-$user->password = $data->password;
-$user->role = $data->role;
-
-if ($user->update()) {
+if ($product->update()) {
     http_response_code(200);
 
-    echo json_encode(array("message" => "Пользователь был обновлён."), JSON_UNESCAPED_UNICODE);
+    echo json_encode(array("message" => "Товар был обновлён."), JSON_UNESCAPED_UNICODE);
 } else {
     http_response_code(503);
 
-    echo json_encode(array("message" => "Невозможно обновить пользователя."), JSON_UNESCAPED_UNICODE);
+    echo json_encode(array("message" => "Невозможно обновить товар."), JSON_UNESCAPED_UNICODE);
 }

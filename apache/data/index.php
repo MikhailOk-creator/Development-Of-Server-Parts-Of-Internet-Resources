@@ -39,7 +39,7 @@ if ($urls[0] == "api") {
             endswitch;
             break;
         }
-        case "user":
+        case "users":
         {
             switch ($method):
                 case "GET":

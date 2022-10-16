@@ -21,7 +21,7 @@ if ($product->name != null) {
 
     $product_arr = array(
         "id" => $product->id,
-        "name" => $product->name_of_product,
+        "name_of_product" => $product->name_of_product,
         "description" => $product->description,
         "price" => $product->price,
     );
