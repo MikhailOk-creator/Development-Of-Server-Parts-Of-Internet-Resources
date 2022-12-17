@@ -22,6 +22,7 @@ if (!isset($login)) {
     echo "<a href='catalog.php'>Каталог</a><br>";
     echo "<a href='upload.php'>Загрузить файл</a><br>";
     echo "<a href='file-list.php'>Список файлов</a><br>";
+    echo "<a href='../statistics.php'>Статистика</a><br>";
     $count = $_SESSION['count'] ?? 1;
     echo "<p>Число просмотров этой страницы в этой сессии: $count</p>";
     $_SESSION['count'] = ++$count;
