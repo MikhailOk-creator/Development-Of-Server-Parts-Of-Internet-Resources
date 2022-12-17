@@ -1,5 +1,6 @@
 <?php
 
+namespace core;
 require_once 'vendor/autoload.php';
 
 use Faker;

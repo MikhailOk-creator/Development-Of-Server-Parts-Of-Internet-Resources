@@ -1,4 +1,7 @@
 <?php
+
+use core\FixtureCreator;
+
 require_once 'vendor/autoload.php';
 include_once('fixtures/FixtureCreator.php');
 error_reporting(E_ERROR | E_PARSE);
