@@ -51,3 +51,16 @@ services:
     restart: on-failure
     ports:
       - "6379:6379"
+
+  spring:
+    container_name: spring
+    build:
+      context: ./spring_pr8
+      dockerfile: Dockerfile
+    links:
+      - database
+      - redis
+    volumes:
+      - ./spring/src:/usr/src/app
+    ports:
+      - "8081:8081"
